@@ -2,6 +2,7 @@
 ### clonar repositorio
 ``` bash
 git clone http://github.com/Mikemaranon/linux-cosas.git
+cd linux-cosas/scripts
 ```
 ### dar permisos de ejecución
 ``` bash
@@ -20,4 +21,13 @@ spark-shell
 pyspark
 # SQL
 spark-sql
+```
+### instalamos jupyter
+``` bash
+sudo chmod +x jupyter.sh
+./jupyter.sh
+```
+### iniciamos jupyter notebook
+``` bash
+sudo chmod +x jupyter.sh
 ```
