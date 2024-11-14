@@ -1,4 +1,4 @@
-# Pasos
+# INSTALAR SPARK
 ### clonar repositorio
 ``` bash
 git clone http://github.com/Mikemaranon/linux-cosas.git
@@ -22,7 +22,8 @@ pyspark
 # SQL
 spark-sql
 ```
-### instalamos jupyter
+# instalar jupyter
+### Ejecutamos script
 ``` bash
 sudo chmod +x jupyter.sh
 ./jupyter.sh
@@ -32,4 +33,10 @@ sudo chmod +x jupyter.sh
 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888
 jupyter lab --no-browser --port=8888
 # en mi caso he usado el puerto 8888, se puede usar el que queramos
+```
+### ejecutamos el siguiente comando en nuestra máquina local
+``` bash
+ssh -L 8888:localhost:8888 $USER@$HOST_IP
+sustituye $USER por usuario de la mv (en mi caso "spark")
+sustituye $HOST_IP por ip de la mv (en mi caso "10.202.0.48")
 ```
