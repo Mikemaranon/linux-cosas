@@ -20,10 +20,4 @@ echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/bashPrueba.txt
 sudo cat ~/bashPrueba.txt >> ~/.bashrc
 rm ~/bashPrueba.txt
 
-echo "#!/bin/bash" >> sour.sh
-echo "source ~/.bashrc" >> sour.sh
-sudo chmod +x sour.sh
-sudo ./sour.sh
-sudo rm sour.sh
-
 echo -e "java version: $(java -version) \n python version: $(python3 --version)"
