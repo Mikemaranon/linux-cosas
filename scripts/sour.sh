@@ -1,3 +1,3 @@
 #!/bin/bash
 
-source ~/.bahrc
+source ~/.bashrc
