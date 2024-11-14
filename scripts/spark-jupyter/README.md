@@ -8,6 +8,8 @@ cd linux-cosas/scripts/spark-jupyter
 ``` bash
 sudo chmod +x installSpark.sh && chmod +x sour.sh
 ./installSpark.sh
+# este script lo he podido realizar gracias a la ayuda de
+# - Daniel Serrano: https://github.com/VKRVS
 ```
 ### 2.1 ejecutar source en caso de no poder lanzar Spark
 ``` bash
