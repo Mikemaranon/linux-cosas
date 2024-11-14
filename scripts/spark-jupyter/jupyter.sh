@@ -22,3 +22,11 @@ rm ~/bashPrueba.txt
 cd ~/linux-cosas/scripts/spark-jupyter
 chmod +x sour.sh
 ./sour.sh
+
+mkdir -p ~/.ipython/profile_default/startup/
+echo "import findspark; findspark.init()" > ~/.ipython/profile_default/startup/00-pyspark-startup.py
+
+pip install toree
+jupyter toree install --spark_home=$SPARK_HOME --interpreters=Scala,PySpark
+
+
