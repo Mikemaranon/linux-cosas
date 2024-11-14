@@ -20,7 +20,7 @@ echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/bashPrueba.txt
 sudo cat ~/bashPrueba.txt >> ~/.bashrc
 rm ~/bashPrueba.txt
 
-cd ~/linux-cosas/scripts
+cd ~/linux-cosas/scripts/spark-jupyter
 chmod +x sour.sh
 ./sour.sh
 
