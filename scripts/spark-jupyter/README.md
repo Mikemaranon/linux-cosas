@@ -27,8 +27,9 @@ spark-sql
 sudo chmod +x jupyter.sh
 ./jupyter.sh
 ```
-### iniciamos jupyter notebook
+### iniciamos jupyter notebook o jupyter lab
 ``` bash
 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888
+jupyter lab --no-browser --port=8888
 # en mi caso he usado el puerto 8888, se puede usar el que queramos
 ```
