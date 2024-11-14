@@ -18,7 +18,12 @@ sudo echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/bashPrueba.t
 sudo echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/bashPrueba.txt
 
 sudo cat ~/bashPrueba.txt >> ~/.bashrc
-source ~/.bashrc
 rm ~/bashPrueba.txt
+
+sudo echo "#!/bin/bash" >> sour.sh
+sudo echo "source ~/.bashrc" >> sour.sh
+sudo chmod +x sour.sh
+sudo ./sour.sh
+sudo rm sour.sh
 
 echo -e "java version: $(java -version) \n python version: $(python3 --version)"
