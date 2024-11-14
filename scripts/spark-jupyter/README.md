@@ -4,10 +4,10 @@
 git clone http://github.com/Mikemaranon/linux-cosas.git
 cd linux-cosas/scripts/spark-jupyter
 ```
-### dar permisos de ejecución
+### dar permisos de ejecución y ejecutar
 ``` bash
-sudo chmod +x installSpark.sh
-sudo chmod +x sour.sh
+sudo chmod +x installSpark.sh && chmod +x sour.sh
+./installSpark.sh
 ```
 ### ejecutar source en caso de no tener spark
 ``` bash
