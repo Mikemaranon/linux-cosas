@@ -45,11 +45,11 @@ jupyter notebook --ip=0.0.0.0 --no-browser --port=8888
 ```
 ### 3. Ejecutamos el siguiente comando en nuestra MAQUINA LOCAL
 ``` bash
-ssh -L 8888:localhost:8888 $USER@$HOST_IP
+ssh -L 8889:localhost:8889 $USER@$HOST_IP
 # sustituye $USER por usuario de la mv (en mi caso "spark")
 # sustituye $HOST_IP por ip de la mv (en mi caso "10.202.0.48")
 ```
 ### 4. Ejecutamos el siguiente comando en la MAQUINA VIRTUAL
 ``` bash
-jupyter lab --no-browser --port=8888
+jupyter lab --no-browser --port=8889
 ```
