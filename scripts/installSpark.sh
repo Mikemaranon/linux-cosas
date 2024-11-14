@@ -6,7 +6,7 @@ sudo apt update -y && apt upgrade -y
 sudo apt install openjdk-8-jdk -y
 sudo apt install python3 -y
 sudo apt install python3-pip -y
-pip3 install jupyter
+pip3 install jupyter-core -y
 
 sudo wget -N https://downloads.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz
 sudo tar -xvf spark-3.5.3-bin-hadoop3.tgz
