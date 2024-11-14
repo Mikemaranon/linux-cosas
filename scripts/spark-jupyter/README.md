@@ -29,8 +29,9 @@ sudo chmod +x jupyter.sh
 ./jupyter.sh
 ```
 ### 1.1 ejecutar source en caso de no poder lanzar jupyter notebook
-``` bash
+``` bash, luego reiniciamos
 source ~/.bashrc
+reboot
 ```
 ### 2. Iniciamos jupyter notebook
 ``` bash
