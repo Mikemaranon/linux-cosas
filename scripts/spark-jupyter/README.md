@@ -27,6 +27,7 @@ spark-sql
 ``` bash
 sudo chmod +x jupyter.sh
 ./jupyter.sh
+# este script lo he podido realizar gracias a la ayuda de Hugo Moreno: https://github.com/hugomorenoo
 ```
 ### 1.1 ejecutar source en caso de no poder lanzar jupyter notebook
 ``` bash, luego reiniciamos
