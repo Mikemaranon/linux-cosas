@@ -12,16 +12,16 @@ sudo mv spark-3.5.3-bin-hadoop3 /opt/spark
 sudo mv /opt/spark/spark-3.5.3-bin-hadoop3/* /opt/spark
 
 cd ~
-sudo echo "export SPARK_HOME=/opt/spark" >> ~/bashPrueba.txt
-sudo echo "export PATH=\$SPARK_HOME/bin:\$PATH" >> ~/bashPrueba.txt
-sudo echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/bashPrueba.txt
-sudo echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/bashPrueba.txt
+echo "export SPARK_HOME=/opt/spark" >> ~/bashPrueba.txt
+echo "export PATH=\$SPARK_HOME/bin:\$PATH" >> ~/bashPrueba.txt
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/bashPrueba.txt
+echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/bashPrueba.txt
 
 sudo cat ~/bashPrueba.txt >> ~/.bashrc
 rm ~/bashPrueba.txt
 
-sudo echo "#!/bin/bash" >> sour.sh
-sudo echo "source ~/.bashrc" >> sour.sh
+echo "#!/bin/bash" >> sour.sh
+echo "source ~/.bashrc" >> sour.sh
 sudo chmod +x sour.sh
 sudo ./sour.sh
 sudo rm sour.sh
