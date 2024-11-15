@@ -17,8 +17,8 @@ echo "export PATH=\$SPARK_HOME/bin:\$PATH" >> pyspark.txt
 echo "export PYTHONPATH=\$SPARK_HOME/python:\$PYTHONPATH" >> pyspark.txt
 echo "export PYSPARK_PYTHON=python3" >> pyspark.txt
 
-sudo cat ~/bashPrueba.txt >> ~/.bashrc
-rm ~/bashPrueba.txt
+sudo cat ~/pyspark.txt >> ~/.bashrc
+rm ~/pyspark.txt
 
 cd ~/linux-cosas/scripts/spark-jupyter
 chmod +x sour.sh
