@@ -3,6 +3,19 @@
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
+
+# Crear y activar el entorno virtual si no existe
+if [ ! -d "/opt/spark/spark_venv" ]; then
+  python3 -m venv /opt/spark/spark_venv
+  echo "Entorno virtual creado en /opt/spark/spark_venv"
+fi
+
+# Activar el entorno virtual
+source /opt/spark/spark_venv/bin/activate
+
+# Instalar las dependencias necesarias dentro del entorno virtual
+pip install --upgrade pip
+
 sudo apt install python3-pip -y
 pip3 install jupyter-core
 sudo apt install jupyter-core -y
@@ -30,4 +43,10 @@ echo "import findspark; findspark.init()" > ~/.ipython/profile_default/startup/0
 pip install toree
 jupyter toree install --spark_home=$SPARK_HOME --interpreters=Scala,PySpark
 
+# Comprobar instalación
+echo -e "Instalación de Jupyter y PySpark completa"
+echo "Verificando versión de Python:"
+python3 --version
+echo "Verificando versión de Spark:"
+$SPARK_HOME/bin/spark-submit --version
 
