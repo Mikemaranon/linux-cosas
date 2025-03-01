@@ -33,7 +33,7 @@ echo "export PYSPARK_PYTHON=python3" >> pyspark.txt
 sudo cat ~/pyspark.txt >> ~/.bashrc
 rm ~/pyspark.txt
 
-cd ~/linux-cosas/scripts/spark-jupyter
+cd ~/Escritorio/linux-cosas/scripts/spark-jupyter
 chmod +x sour.sh
 ./sour.sh
 
