@@ -77,11 +77,6 @@ Si no puedes ejecutar Jupyter después de la instalación, ejecuta el siguiente 
 source ~/.bashrc
 reboot
 ```
-### 1.2 ejecutar source en caso de no poder lanzar jupyter notebook
-``` bash, luego reiniciamos
-source ~/.bashrc
-reboot
-```
 ### 2. Iniciamos jupyter notebook
 ``` bash
 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888
