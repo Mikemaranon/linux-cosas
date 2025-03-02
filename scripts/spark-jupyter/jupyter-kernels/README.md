@@ -24,6 +24,17 @@ Una vez tengamos estos pasos, aztualizamos terminal y verificamos la versión de
 source ~/.bashrc
 conda --version
 ```
+## Uso de Conda
+
+Conda es un "entorno virtual" por entenderlo de forma simple, por lo que para usarlo tenemos que iniciarlo primero:
+```bash
+conda activate
+```
+esto nos iniciará una terminal nueva con (base) a la izquierda del usuario. Si queremos salir simplemente tenemos que escribir:
+```bash
+conda deactivate
+```
+Esto es muy importante para poder instalar bien todas las dependencias de los kernels, de esta forma funcionará todo correctamente.
 
 ## Instalación de kernels
 
