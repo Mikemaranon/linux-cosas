@@ -34,6 +34,27 @@ sudo apt-get -y install cuda-toolkit-12-8
 ```
 estos comandos los he obtenido de la página oficial de (CUDA)[https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network]
 
+ahora actualizamos la lista de paquetes:
+```bash
+sudo apt-get update
+```
+Necesitamos actualizar `.bashrc`
+```bash
+nano ~/.bashrc
+
+# añadimos el siguiente contenido al final del archivo
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+```
+actualizamos `.bashrc`
+```bash
+source ~/.bashrc
+```
+finalmente comprobamos la version de CUDA
+```bash
+nvcc --version
+```
+
 ## paso 4: Instalar los drivers oficiales específicos
 en el caso de que los drivers genéricos no funcionen, podemos ir a la (página oficial de nvidia)[https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run] y buscar nuestra gráfica en el sistema que usamos.
 
