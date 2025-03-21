@@ -55,7 +55,23 @@ finalmente comprobamos la version de CUDA
 nvcc --version
 ```
 
-## paso 4: Instalar los drivers oficiales específicos
+## paso 4: Instalar cuDNN
+otra herramienta que viene muy bien (en mi caso para entrenamiento de modelos de IA).  
+para instalarla tenemos que introducir los siguientes comandos:
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cudnn
+```
+estos comandos los he obtenido de la página oficial de (cuDNN)[https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network]
+
+para comprobar que todo esta correctamente, buscamos la instalacion:
+```bash
+dpkg -l | grep cudnn
+```
+
+## paso 5: Instalar los drivers oficiales específicos
 en el caso de que los drivers genéricos no funcionen, podemos ir a la (página oficial de nvidia)[https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run] y buscar nuestra gráfica en el sistema que usamos.
 
 lo descargamos y, tras haberlo descargado, lo ejecutamos:
