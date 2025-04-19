@@ -1,0 +1,71 @@
+ 1598  sudo apt install steam
+ 1599  sudo apt install steam-installer
+ 1604  sudo dpkg -i steam_latest.deb
+ 1606  steam
+ 1613  steam
+ 1614  sudo apt remove --purge steam
+ 1616  rm -rf ~/.steam
+ 1622  apt install steam-installer
+ 1623  sudo apt install steam-installer
+ 1625  steam
+ 1626  STEAM_RUNTIME=0 steam
+ 1629  sudo wget -qO - https://repo.steampowered.com/steam/archive/stable/steam.gpg | sudo apt-key add -
+ 1631  wget -qO - https://repo.steampowered.com/steam/archive/stable/steam.gpg | sudo tee /etc/apt/trusted.gpg.d/steam.asc
+ 1632  echo "deb [arch=amd64] https://repo.steampowered.com/steam/ stable steam" | sudo tee /etc/apt/sources.list.d/steam.list
+ 1634  sudo rm /usr/share/keyrings/steam.gpg
+ 1636  sudo rm /etc/apt/trusted.gpg.d/steam.asc
+ 1637  sudo nano /etc/apt/sources.list.d/steam.list
+ 1638  wget -qO - https://repo.steampowered.com/steam/archive/stable/steam.gpg | sudo tee /usr/share/keyrings/steam.gpg
+ 1640  sudo rm /etc/apt/sources.list.d/steam-stable.list
+ 1643  sudo apt install steam
+ 1646  ps aux | grep steam
+ 1647  killall steam
+ 1648  ps aux | grep steam
+ 1649  steam
+ 1651  rm -rf ~/.steam
+ 1653  steam --no-glx
+ 1656  sudo apt install steam-installer
+ 1657  steam
+ 1659  steam
+ 1665  ps aux | grep steam
+ 1666  killall steam
+ 1667  ps aux | grep steam
+ 1669  steam-installer
+ 1670  steam
+ 1671  sudo apt remove steam
+ 1672  sudo apt install steam-installer
+ 1673  sudo apt purge steam
+ 1674  sudo apt install steam-installer
+ 1675  steam
+ 1676  STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0 steam
+ 1677  rm ~/.steam/steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.6
+ 1678  rm ~/.steam/steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.1
+ 1679  rm ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 1680  rm ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+ 1681  rm ~/.steam/steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.1
+ 1682  rm ~/.steam/steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgpg-error.so.0
+ 1683  STEAM_RUNTIME=0 steam
+ 1685  ls ~/.steam
+ 1686  cd ~/.steam
+ 1687  cd steam
+ 1690  rm ~/.steam/steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.6
+ 1692  ps aux | grep steam
+ 1693  killall steam
+ 1694  ps aux | grep steam
+ 1695  ~/.steam/debian-installation/steam.sh
+ 1699  steam --reset
+ 1700  find ~/.steam -name steam-runtime-check-requirements
+ 1702  ldd ~/.steam/debian-installation/ubuntu12_32/steam | grep "not found"
+ 1703  __GLVND_DISALLOW_PATCHING=1 steam
+ 1704  ~/.steam/debian-installation/steam.sh
+ 1999  STEAM_DISABLE_BROWSER=1 steam
+ 2000  nano ~/steam-bp.sh
+ 2001  chmod +x ~/steam-bp.sh
+ 2002  nano ~/.local/share/applications/steam-bp.desktop
+ 2003  ./steam-bp.sh 
+ 2005  gamescope -f -e -- steam -tenfoot -oldbigpicture
+ 2006  pkill steam
+ 2007  pkill steamwebhelper
+ 2008  pkill -f "steam-runtime"
+ 2009  ps aux | grep steam
+ 2015  history | grep steam > historial_steam.txt
