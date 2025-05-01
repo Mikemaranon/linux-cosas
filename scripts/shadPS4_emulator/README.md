@@ -59,3 +59,50 @@ si la ruta donde tenemos los juegos es otra, lo ejecutamos de esta forma:
 ```bash
 ./build/shadps4 /"PATH"/"TO"/"GAME"/"FOLDER"/eboot.bin
 ```
+
+## Alternativa: web oficial
+
+si el repositorio y el montaje dan demasiados problemas, está como alternativa la web oficial de [shadPS4](https://shadps4.net/downloads/) donde podremos descargar un zip que contiene una imagen ejecutable.
+
+cuando lo tengamos ejecutamos:
+```bash
+unzip unzip shadps4-linux-qt-0.8.0.zip
+# Atentos a la versión descargada, en mi caso es la 0.8.0
+```
+y luego podemos iniciarlo con
+```bash
+./Shadps4-qt.AppImage
+```
+
+### Añadir al escritorio
+
+si queremos que además de ejecutarlo mediante este método podamos añadirlo al escritorio, vamos a hacer lo siguiente:
+- lo movemos a `/opt`
+```bash
+sudo mkdir /opt/shadps4
+sudo mv Shadps4-qt.AppImage /opt/shadps4/Shadps4-qt.AppImage
+```
+- le damos `permisos de ejecución` a la imagen
+```bash
+sudo chmod +x /opt/shadps4/Shadps4-qt.AppImage
+```
+- vamos a descargar un `icono` para ponerle
+```bash
+sudo mv ~/Descargas/playstation.png /opt/shadps4/
+```
+- creamos un archivo `shadps4.desktop`
+```bash
+nano ~/.local/share/applications/shadps4.desktop
+
+# el contenido del archivo será el siguiente
+[Desktop Entry]
+Name=ShadPS4
+Exec=/opt/shadps4/Shadps4-qt.AppImage
+Icon=/opt/shadps4/playstation.png
+Type=Application
+Categories=Utility;
+```
+- actualizamos la base de datos de `accesos directos`:
+```bash
+update-desktop-database ~/.local/share/applications/
+```
