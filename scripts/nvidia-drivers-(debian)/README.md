@@ -32,7 +32,7 @@ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
 ```
-estos comandos los he obtenido de la página oficial de (CUDA)[https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network]
+estos comandos los he obtenido de la página oficial de [CUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network)
 
 ahora actualizamos la lista de paquetes:
 ```bash
@@ -64,7 +64,7 @@ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cudnn
 ```
-estos comandos los he obtenido de la página oficial de (cuDNN)[https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network]
+estos comandos los he obtenido de la página oficial de [cuDNN](https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network)
 
 para comprobar que todo esta correctamente, buscamos la instalacion:
 ```bash
@@ -72,7 +72,7 @@ dpkg -l | grep cudnn
 ```
 
 ## paso 5: Instalar los drivers oficiales específicos
-en el caso de que los drivers genéricos no funcionen, podemos ir a la (página oficial de nvidia)[https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run] y buscar nuestra gráfica en el sistema que usamos.
+en el caso de que los drivers genéricos no funcionen, podemos ir a la [página oficial de nvidia](https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run) y buscar nuestra gráfica en el sistema que usamos.
 
 lo descargamos y, tras haberlo descargado, lo ejecutamos:
 ```bash
@@ -80,3 +80,24 @@ wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux
 sudo sh NVIDIA-Linux-x86_64-570.133.07.run
 ```
 
+### dependencias:
+
+seguramente nos pida los siguientes paquetes:
+- gcc
+```bash
+sudo apt install gcc
+```
+- make
+```bash
+sudo apt install make
+```
+- cabeceras de kernel
+```bash
+sudo apt update
+sudo apt install linux-headers-$(uname -r)
+```
+- arquitectura 32bit
+```bash
+sudo apt install lib32z1 lib32ncurses6 lib32stdc++6
+sudo dpkg --add-architecture i386
+```
