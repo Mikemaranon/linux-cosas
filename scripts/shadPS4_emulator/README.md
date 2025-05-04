@@ -46,7 +46,7 @@ cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COM
 ```
 Ahora usamos `cmake` para construir el propio proyecto
 ```bash
-
+cmake --build ./build --parallel$(nproc)
 ```
 
 > Si se te congela el equipo durante la construcción, el repositorio oficial alerta que puede ser por un alto uso de recursos, en tal caso ejecutad el comando anterior sin el parametro `--parallel$(nproc)`
@@ -106,3 +106,76 @@ Categories=Utility;
 ```bash
 update-desktop-database ~/.local/share/applications/
 ```
+
+## Compatibilidad de librerías
+
+Me he encontrado con algunos problemas a la hora de trabajar con librerías. 
+
+El problema se arregló instalando una instancia de la librería dentro de la carpeta donde guardo los archivos de shadPS4 en `/mnt/d/shadps4/hotfix_libs`. en ese directorio he instalado dos librerías que me daban problemas:
+
+### 1. **Librería `FreeType`**
+
+Aunque este problema vino después, lo voy a poner primero ya que la siguiente librería depende de esta para poder ejecutar la imagen correctamente.
+
+Esta librería contiene funciones que necesita la librería `Harfbuzz` para poder funcionar correctamente con shadPS4, lo que hace necesario empezar por aquí.
+
+primero obtenemos el comprimido:
+``` bash
+wget https://download.savannah.gnu.org/releases/freetype/freetype-2.13.2.tar.gz
+```
+
+luego lo descomprimimos y nos movemos al directorio para montarlo:
+```bash
+tar -xf freetype-2.13.2.tar.gz
+cd freetype-2.13.2
+```
+
+configuramos `freeType` para que se instale en su propio subdirectorio:
+```bash
+./configure --prefix=/mnt/discordia/shadPS4/hotfix_libs/freetype-2.13.2/INSTALLED
+```
+
+compilamos e instalamos:
+```bash
+make -j$(nproc)
+make install
+```
+
+#### Preparamos el entorno para usar la siguiente librería
+```bash
+export PKG_CONFIG_PATH=/mnt/discordia/shadPS4/hotfix_libs/freetype-2.13.2/INSTALLED/lib/pkgconfig
+```
+verificamos con:
+```bash
+pkg-config --modversion freetype2
+```
+### 2. **Librería `Harfbuzz`**
+
+Continuando por la librería `Harfbuzz`, la versión de mi sistema era la `2.6` mientras que shadPS4 necesita como mínimo la `4.0`. Actualizar la librería generaba conflictos en mi sistema por lo que opté por instalar una instancia nueva y decirle a la imagen de ejecución que usara los archivos de esa instancia en vez de los que hay en el sistema.
+
+primero obtenemos el comprimido:
+``` bash
+wget https://github.com/harfbuzz/harfbuzz/releases/download/8.4.0/harfbuzz-8.4.0.tar.xz
+tar -xf harfbuzz-8.4.0.tar.xz
+```
+
+luego lo descomprimimos y nos movemos al directorio para montarlo:
+```bash
+tar -xf harfbuzz-8.4.0.tar.xz
+cd harfbuzz-8.4.0
+```
+
+ahora configuramos la librería usando las dependencias de `freeType`:
+```bash
+./configure --prefix=/mnt/discordia/shadPS4/hotfix_libs/harfbuzz-8.4.0/INSTALLED --with-freetype=yes
+```
+
+compilamos e instalamos:
+```bash
+make -j$(nproc)
+make install
+```
+
+# Resultado final:
+
+![alt text](image.png)
