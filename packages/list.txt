@@ -1,0 +1,19 @@
+    6  sudo apt install gnome-tweaks
+   12  sudo apt install git
+   25  sudo apt install nvidia-drivers
+   31  sudo apt install gcc
+   33  sudo apt install make
+   36  sudo apt install linux-headers-$(uname -r)
+   38  sudo apt install libc6:i386 lib32z1 lib32ncurses6 lib32stdc++6
+   40  sudo apt install lib32z1 lib32ncurses6 lib32stdc++6
+   42  sudo apt install steam
+   65  sudo apt install tailscale
+   84  sudo apt install bluetooth bluez bluez-tools rfkill blueman
+  105  sudo apt install firmware-realtek
+  108  sudo apt install build-essential clang git cmake libasound2-dev     libpulse-dev libopenal-dev libssl-dev zlib1g-dev libedit-dev     libudev-dev libevdev-dev libsdl2-dev libjack-dev libsndio-dev     qt6-base-dev qt6-tools-dev qt6-multimedia-dev libvulkan-dev     vulkan-validationlayers libpng-dev
+  143  sudo apt install python3
+  156  sudo apt install libc6
+  166  sudo apt install pip
+  206  sudo apt install python3-pip python3-dev
+  212  sudo apt install python3-venv
+  238  sudo apt install libpq-dev
