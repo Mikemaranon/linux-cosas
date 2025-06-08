@@ -59,25 +59,8 @@ Este script es muy largo, vamos a desglosarlo:
 - `-monitor stdio`: Consola QEMU interactiva en la terminal.
 
 ```bash
-qemu-system-x86_64 \
-    -enable-kvm \
-    -m 12G \
-    -cpu host,kvm=on \
-    -smp 6,sockets=1,cores=6,threads=1 \
-    -machine q35,accel=kvm \
-    -bios /usr/share/OVMF/OVMF_CODE.fd \
-    -drive file=/mnt/discordia/VMs/Win11/windows11.qcow2,format=qcow2,if=virtio \
-    -cdrom /mnt/discordia/VMs/Win11/Win11_24H2_Spanish_x64.iso \
-    -device virtio-net-pci,netdev=net0 \
-    -netdev user,id=net0,hostfwd=tcp::2222-:3389 \
-    -device virtio-vga \
-    -device virtio-balloon-pci \
-    -usb \
-    -device usb-tablet \
-    -device ich9-intel-hda -device hda-duplex \
-    -device virtio-keyboard-pci \
-    -device virtio-mouse-pci \
-    -monitor stdio
+chmod +x run.sh
+sh run.sh
 ```
 
 ### Instalamos Moonlight en Linux (host)
@@ -97,6 +80,14 @@ Aquí tendremos todas las configuraciones necesarias para nuestra VM de Windows 
 - Descargar ISO de drivers VirtIO: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
 - Montar ISO dentro de la VM (desde virt-manager o agregar `-cdrom` en QEMU)
 - Instalar drivers para red y almacenamiento dentro de Windows 11
+
+### Instalar drivers de Red en Windows
+
+me he encontrado con el problema de que no podía reconocer el dispositivo de ethernet, por lo que he usado estos drivers añadiéndolos como dispositivo cdrom a la VM (en el script de ejecución ya viene incluido)
+
+https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
+
+para instalarlos, actualizar drivers de forma manual desde el `administrador de dispositivos` de windows y buscar la ruta del disco CDROM con la versión de windows dentro de la carpeta `NetKVM`
 
 ### Instalar Sunshine en Windows 11
 
