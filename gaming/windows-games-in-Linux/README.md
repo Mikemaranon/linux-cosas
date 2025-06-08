@@ -80,13 +80,6 @@ Aquí tendremos todas las configuraciones necesarias para nuestra VM de Windows 
 - Descargar ISO de drivers VirtIO: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
 - Montar ISO dentro de la VM (desde virt-manager o agregar `-cdrom` en QEMU)
 - Instalar drivers para red y almacenamiento dentro de Windows 11
-
-### Instalar drivers de Red en Windows
-
-me he encontrado con el problema de que no podía reconocer el dispositivo de ethernet, por lo que he usado estos drivers añadiéndolos como dispositivo cdrom a la VM (en el script de ejecución ya viene incluido)
-
-https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
-
 para instalarlos, actualizar drivers de forma manual desde el `administrador de dispositivos` de windows y buscar la ruta del disco CDROM con la versión de windows dentro de la carpeta `NetKVM`
 
 ### Instalar Sunshine en Windows 11
