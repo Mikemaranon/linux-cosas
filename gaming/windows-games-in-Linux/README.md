@@ -84,9 +84,28 @@ para instalarlos, actualizar drivers de forma manual desde el `administrador de 
 
 ### Instalar Sunshine en Windows 11
 
-- Descargar Sunshine: https://github.com/LizardByte/Sunshine/releases
-- Instalar y configurar para que corra al inicio
-- Configurar un usuario y contraseña para Moonlight
+Descargar Sunshine: https://github.com/LizardByte/Sunshine/releases en mi caso he usado la version `stable`
+Una vez la tenemos, instalamos y configuramos para que corra al inicio
+- abrimos en Windows `Programador de tareas`
+- le damos a la derecha a `crear tarea`
+- añadimos los siguientes parámetros:
+    - Nombre: "SunshineAutoStart"
+    - Activamos `Ejecutar con los privilegios más altos`
+    - Configuramos para `Windows 10`
+    - Nos vamos a `acciones` y en `nuevo` añadimos la ruta (normalmente es "C:\Program Files\Sunshine\sunshine.exe")
+    - Nos vamos a `desencadenadores` y en `nuevo` ponemos:
+        - Iniciar tarea `Al iniciar sesión`
+        - Seleccionamos nuestro usuario
+Finalmente configuramos un usuario y contraseña para Moonlight:
+
+
+Necesitamos activar el inicio de sesión automático en `regedit`:
+- vamos a esta ruta: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon`
+- creamos nuevos `valores de cadena` con los siguientes nombres y contenidos:
+    - `AutoAdminLogon`: 1
+    - `DefaultUsername`: nombredeusuario
+    - `DefaultPassword`: contraseña
+
 
 ## Paso 3: Conectar VM con Host 
 

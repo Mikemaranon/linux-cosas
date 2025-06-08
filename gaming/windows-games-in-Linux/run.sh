@@ -28,7 +28,7 @@ qemu-system-x86_64 \
     -drive file="$ISO_PATH",media=cdrom,index=2 \
     -drive file="$NET_PATH",media=cdrom,index=3 \
     -device virtio-net-pci,netdev=net0 \
-    -netdev user,id=net0,hostfwd=tcp::2222-:3389 \
+    -netdev user,id=net0,hostfwd=tcp::2222-:3389,hostfwd=tcp::47984-:47984 \
     -device virtio-vga \
     -device virtio-balloon-pci \
     -usb \
@@ -36,5 +36,6 @@ qemu-system-x86_64 \
     -device ich9-intel-hda -device hda-duplex \
     -device virtio-keyboard-pci \
     -device virtio-mouse-pci \
-    -monitor stdio
+    -monitor stdio \
+    -display none       # ESTO ES SOLO SI NO QUIERES QUE APAREZCA LA VENTANA DE QEMU
 
