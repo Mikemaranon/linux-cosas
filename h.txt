@@ -1,0 +1,140 @@
+    1  pwd
+    2  ls
+    3  mv -r dentro-texto/ Desktop/
+    4  mv dentro-texto/ Desktop/
+    5  ls
+    6  cd D
+    7  cd Desktop/
+    8  ls
+    9  dentro-texto/
+   10  cd dentro-texto/
+   11  sudo ufw allow 25565/tcp
+   12  sudo apt update && sudo apt install ufw -y
+   13  ls
+   14  sh run.sh 
+   15  sudo apt install openjdk-17-jdk
+   16  sh run.sh 
+   17  ls
+   18  nano server.properties 
+   19  cd config/
+   20  ls
+   21  nano iceandfire-common.toml 
+   22  cd ..
+   23  ls
+   24  cd mods/
+   25  ls
+   26  rm -rf pmmo-1.20.1-1.6.31.jar 
+   27  ls
+   28  cd ..
+   29  ls
+   30  sudo apt install screen
+   31  screen -S mc
+   32  clear
+   33  cd mods/
+   34  ls
+   35  cd Desktop/dentro-texto/
+   36  screen -S mc
+   37  sh run.sh 
+   38  cd mods/
+   39  ls
+   40  rm -rf BiomesOPlenty-forge-1.20.1-19.0.0.94.jar 
+   41  cd ..
+   42  nano server.properties 
+   43  sh run.sh 
+   44  rm -rf world/
+   45  sh run.sh 
+   46  sh run.sh 
+   47  rm -rf world/
+   48  sh run.sh 
+   49  rm -rf world/
+   50  sh run.sh 
+   51  rm -rf world/
+   52  sh run.sh 
+   53  nano server.properties 
+   54  sh run.sh 
+   55  nano run.
+   56  nano run.sh
+   57  nano libraries/net/minecraftforge/forge/1.20.1-47.3.0/unix_args.txt 
+   58  nano run.sh
+   59  nano user_jvm_args.txt 
+   60  ls mods/
+   61  sh run.sh 
+   62  systemctl set-default multi-user.target
+   63  sudo reboot
+   64  ls
+   65  cd Desktop/
+   66  ls
+   67  curl -fsSL https://tailscale.com/install.sh | sh
+   68  sudo tailscale up
+   69  cd Desktop/mc-servers/dentro-texto/
+   70  cd Desktop
+   71  xd dentro-texto/
+   72  cd dentro-texto/
+   73  sudo reboot
+   74  cd Desktop/dentro-texto/
+   75  screen -S mc
+   76  screen -r mc
+   77  curl -fsSL https://deb.nodesourve.com/setup_14.x | sudo -E bash -
+   78  curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+   79  sudo apt install nodejs
+   80  sudo npm -g install yarn
+   81  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   82  node -v
+   83  npm -v
+   84  sudo apt install npm -y
+   85  npm -v
+   86  sudo npm -g install yarn
+   87  yarn global add code-server
+   88  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+   89  node -v
+   90  sudo apt remove nodejs -y
+   91  sudo apt install nodejs -y
+   92  node -v
+   93  npm -v
+   94  yarn global add code-server
+   95  ~/.yarn/bin/code-server
+   96  nano ~/.config/code-server/config.yaml 
+   97  ~/.yarn/bin/code-server
+   98  nano ~/.config/code-server/config.yaml 
+   99  PASSWORD="0631" ~/.yarn/bin/code-server
+  100  nano ~/.config/code-server/config.yaml 
+  101  ~/.yarn/bin/code-server
+  102  nano .bashrc 
+  103  code-server
+  104  source ~/.bashrc
+  105  code-server
+  106  screen -ls
+  107  screen -S code-server
+  108  screen -ls
+  109  nano .bashrc 
+  110  screens
+  111  source ~/.bashrc
+  112  screens
+  113  nano .bashrc 
+  114  source ~/.bashrc
+  115  screens
+  116  screens() {     echo "[SYSTEM] Running screen sessions:";     
+    sessions=$(screen -ls | sed -n '2,$p' | grep -v 'Socket' | grep -v '^$');          if [ -z "$sessions" ]; then         echo "No hay sesiones activas.";         return;     fi;     
+    echo "===================================";     echo -e "PID\tSession Name\tStatus";     echo "-----------------------------------";     while IFS= read -r line; do
+        
+        pid_name=$(echo "$line" | awk '{print $1}');         pid=${pid_name%%.*};         session_name=${pid_name#*.};         
+        status=$(echo "$line" | awk '{print $NF}' | tr -d '()');                  printf "%s\t%s\t%s\n" "$pid" "$session_name" "$status"
+    done <<< "$sessions";     echo "==================================="; }
+  117  nano .bashrc 
+  118  source ~/.bashrc
+  119  screens
+  120  nano .bashrc 
+  121  source ~/.bashrc
+  122  screens
+  123  nano .bashrc 
+  124  source ~/.bashrc
+  125  screens
+  126  cd Desktop/
+  127  ls
+  128  mkdir servers
+  129  mkdir codes
+  130  cd codes
+  131  git clone https://github.com/Mikemaranon/linux-cosas
+  132  ls
+  133  cd linux-cosas/
+  134  history >> h.txt
